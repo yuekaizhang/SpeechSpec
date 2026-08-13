@@ -1,0 +1,47 @@
+{
+  "target_model": "yuekai/Fun-CosyVoice3-0.5B-2512-LLM-HF",
+  "draft_model": null,
+  "method": null,
+  "num_spec_tokens": 0,
+  "dataset": "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/seed_tts_zh_cosy3_local",
+  "split": "test_zh",
+  "num_prompts": 2020,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "top_k": 15,
+  "repetition_penalty": 1.1,
+  "runs": {
+    "bs1": {
+      "wall_s": 524.89,
+      "output_tokens": 346075,
+      "tok_per_s": 659.3,
+      "audio_seconds_generated": 13843.0,
+      "audio_realtime_factor": 26.37,
+      "finished_by_stop": 2017
+    },
+    "bs8": {
+      "wall_s": 108.27,
+      "output_tokens": 347684,
+      "tok_per_s": 3211.4,
+      "audio_seconds_generated": 13907.4,
+      "audio_realtime_factor": 128.45,
+      "finished_by_stop": 2017
+    },
+    "bs16": {
+      "wall_s": 58.18,
+      "output_tokens": 344017,
+      "tok_per_s": 5913.0,
+      "audio_seconds_generated": 13760.7,
+      "audio_realtime_factor": 236.52,
+      "finished_by_stop": 2020
+    },
+    "bs64": {
+      "wall_s": 17.83,
+      "output_tokens": 340879,
+      "tok_per_s": 19118.3,
+      "audio_seconds_generated": 13635.2,
+      "audio_realtime_factor": 764.73,
+      "finished_by_stop": 2020
+    }
+  }
+}

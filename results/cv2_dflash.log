@@ -1,0 +1,256 @@
+using prompt tokens column: prompt_audio_cosy2_tokens
+2020 prompts from yuekai/seed_tts_cosy2:test_zh
+auto method: dflash
+auto num_spec_tokens: 3
+INFO 07-17 03:04:19 [api_utils.py:273] non-default args: {'max_model_len': 4096, 'gpu_memory_utilization': 0.8, 'speculative_config': {'model': '/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/ckpt_dflash_500k_regen/checkpoint_best', 'method': 'dflash', 'num_speculative_tokens': 3, 'draft_sample_method': 'probabilistic'}, 'model': 'yuekai/cosyvoice2_llm'}
+INFO 07-17 03:04:21 [model.py:619] Resolved architecture: Qwen2ForCausalLM
+INFO 07-17 03:04:21 [model.py:1776] Using max model len 4096
+INFO 07-17 03:04:34 [model.py:619] Resolved architecture: DFlashDraftModel
+INFO 07-17 03:04:34 [model.py:1776] Using max model len 32768
+INFO 07-17 03:04:34 [speculative.py:1044] Overriding draft model max model len from 32768 to 4096
+INFO 07-17 03:04:34 [scheduler.py:252] Chunked prefill is enabled with max_num_batched_tokens=16384.
+INFO 07-17 03:04:34 [vllm.py:1042] Asynchronous scheduling is enabled.
+INFO 07-17 03:04:34 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=293841) INFO 07-17 03:04:38 [core.py:114] Initializing a V1 LLM engine (v0.25.0) with config: model='yuekai/cosyvoice2_llm', speculative_config=SpeculativeConfig(method='dflash', model='/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/ckpt_dflash_500k_regen/checkpoint_best', num_spec_tokens=3), tokenizer='yuekai/cosyvoice2_llm', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, tokenizer_revision=None, trust_remote_code=False, dtype=torch.bfloat16, max_seq_len=4096, download_dir=None, load_format=auto, tensor_parallel_size=1, pipeline_parallel_size=1, data_parallel_size=1, decode_context_parallel_size=1, dcp_comm_backend=ag_rs, disable_custom_all_reduce=False, quantization=None, quantization_config=None, enforce_eager=False, enable_return_routed_experts=False, kv_cache_dtype=auto, device_config=cuda, structured_outputs_config=StructuredOutputsConfig(backend='auto', disable_any_whitespace=False, disable_additional_properties=False, reasoning_parser='', reasoning_parser_plugin='', enable_in_reasoning=False), observability_config=ObservabilityConfig(show_hidden_metrics_for_version=None, otlp_traces_endpoint=None, collect_detailed_traces=None, kv_cache_metrics=False, kv_cache_metrics_sample=0.01, cudagraph_metrics=False, enable_layerwise_nvtx_tracing=False, enable_mfu_metrics=False, enable_mm_processor_stats=False, enable_logging_iteration_details=False, jit_monitor_mode='warn', jit_monitor_verbose=False), seed=0, served_model_name=yuekai/cosyvoice2_llm, enable_prefix_caching=True, enable_chunked_prefill=True, pooler_config=None, compilation_config={'mode': <CompilationMode.VLLM_COMPILE: 3>, 'debug_dump_path': None, 'cache_dir': '', 'compile_cache_save_format': 'binary', 'backend': 'inductor', 'custom_ops': ['none'], 'ir_enable_torch_wrap': True, 'splitting_ops': ['vllm::unified_attention_with_output', 'vllm::unified_mla_attention_with_output', 'vllm::mamba_mixer2', 'vllm::mamba_mixer', 'vllm::short_conv', 'vllm::linear_attention', 'vllm::plamo2_mamba_mixer', 'vllm::qwen_gdn_attention_core', 'vllm::gdn_attention_core_xpu', 'vllm::olmo_hybrid_gdn_full_forward', 'vllm::kda_attention', 'vllm::sparse_attn_indexer', 'vllm::rocm_aiter_sparse_attn_indexer', 'vllm::deepseek_v4_attention', 'vllm::hpc_rope_norm_forward', 'vllm::unified_kv_cache_update', 'vllm::unified_mla_kv_cache_update'], 'compile_mm_encoder': False, 'cudagraph_mm_encoder': False, 'encoder_cudagraph_token_budgets': [], 'encoder_cudagraph_max_vision_items_per_batch': 0, 'encoder_cudagraph_max_frames_per_batch': None, 'compile_sizes': [], 'compile_ranges_endpoints': [16384], 'inductor_compile_config': {'enable_auto_functionalized_v2': False, 'size_asserts': False, 'alignment_asserts': False, 'scalar_asserts': False, 'combo_kernels': True, 'benchmark_combo_kernel': True}, 'inductor_passes': {}, 'cudagraph_mode': <CUDAGraphMode.FULL_AND_PIECEWISE: (2, 1)>, 'cudagraph_num_of_warmups': 1, 'cudagraph_capture_sizes': [1, 2, 4, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 256, 272, 288, 304, 320, 336, 352, 368, 384, 400, 416, 432, 448, 464, 480, 496, 512], 'cudagraph_copy_inputs': False, 'cudagraph_specialize_lora': True, 'use_inductor_graph_partition': False, 'pass_config': {'fuse_norm_quant': False, 'fuse_act_quant': False, 'fuse_attn_quant': False, 'enable_sp': False, 'fuse_gemm_comms': False, 'fuse_allreduce_rms': False, 'fuse_rope_kvcache_cat_mla': False, 'fuse_act_padding': False}, 'max_cudagraph_capture_size': 512, 'dynamic_shapes_config': {'type': <DynamicShapesType.BACKED: 'backed'>, 'evaluate_guards': False, 'assume_32_bit_indexing': False}, 'local_cache_dir': None, 'fast_moe_cold_start': False, 'static_all_moe_layers': []}, kernel_config=KernelConfig(ir_op_priority=IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native']), enable_flashinfer_autotune=True, enable_cutedsl_warmup=True, moe_backend='auto', linear_backend='auto')
+(EngineCore pid=293841) INFO 07-17 03:04:39 [parallel_state.py:1607] world_size=1 rank=0 local_rank=0 distributed_init_method=tcp://10.65.21.79:39567 backend=nccl
+(EngineCore pid=293841) INFO 07-17 03:04:39 [parallel_state.py:1942] rank 0 in world size 1 is assigned as DP rank 0, PP rank 0, PCP rank 0, TP rank 0, EP rank N/A, EPLB rank N/A
+(EngineCore pid=293841) INFO 07-17 03:04:39 [gpu_worker.py:360] Using V2 Model Runner
+(EngineCore pid=293841) INFO 07-17 03:04:40 [model_runner.py:281] Loading model from scratch...
+(EngineCore pid=293841) INFO 07-17 03:04:41 [cuda.py:476] Using FLASH_ATTN attention backend out of potential backends: ['FLASH_ATTN', 'FLASHINFER', 'TRITON_ATTN', 'FLEX_ATTENTION'].
+(EngineCore pid=293841) INFO 07-17 03:04:41 [flash_attn.py:718] Using FlashAttention version 3
+(EngineCore pid=293841) INFO 07-17 03:04:42 [weight_utils.py:574] No model.safetensors.index.json found in remote.
+(EngineCore pid=293841) INFO 07-17 03:04:42 [weight_utils.py:849] Filesystem type for checkpoints: LUSTRE. Checkpoint size: 1.20 GiB. Available RAM: 1949.11 GiB.
+(EngineCore pid=293841) INFO 07-17 03:04:42 [weight_utils.py:811] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(EngineCore pid=293841) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=293841) INFO 07-17 03:04:42 [weight_utils.py:783] Prefetching checkpoint files: 10% (1/1)
+(EngineCore pid=293841) INFO 07-17 03:04:42 [weight_utils.py:806] Prefetching checkpoint files into page cache finished in 0.20s
+(EngineCore pid=293841) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.99it/s]
+(EngineCore pid=293841) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00,  1.99it/s]
+(EngineCore pid=293841) 
+(EngineCore pid=293841) INFO 07-17 03:04:43 [default_loader.py:430] Loading weights took 0.55 seconds
+(EngineCore pid=293841) INFO 07-17 03:04:43 [eagle3_utils.py:28] Using Eagle3 auxiliary layers from config: (2, 12, 21)
+(EngineCore pid=293841) INFO 07-17 03:04:43 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=293841) INFO 07-17 03:04:43 [weight_utils.py:849] Filesystem type for checkpoints: LUSTRE. Checkpoint size: 0.42 GiB. Available RAM: 1948.94 GiB.
+(EngineCore pid=293841) INFO 07-17 03:04:43 [weight_utils.py:811] Prefetching checkpoint files into page cache started (in background, num_threads=8, block_size=16777216 bytes)
+(EngineCore pid=293841) Loading safetensors checkpoint shards:   0% Completed | 0/1 [00:00<?, ?it/s]
+(EngineCore pid=293841) Loading safetensors checkpoint shards: 100% Completed | 1/1 [00:00<00:00, 470.16it/s]
+(EngineCore pid=293841) 
+(EngineCore pid=293841) INFO 07-17 03:04:43 [weight_utils.py:783] Prefetching checkpoint files: 10% (1/1)
+(EngineCore pid=293841) INFO 07-17 03:04:43 [weight_utils.py:806] Prefetching checkpoint files into page cache finished in 0.08s
+(EngineCore pid=293841) INFO 07-17 03:04:43 [default_loader.py:430] Loading weights took 0.22 seconds
+(EngineCore pid=293841) INFO 07-17 03:04:44 [model_runner.py:302] Model loading took 1.36 GiB and 3.767487 seconds
+(EngineCore pid=293841) INFO 07-17 03:04:44 [topk_topp_sampler.py:55] Using FlashInfer for top-p & top-k sampling.
+(EngineCore pid=293841) INFO 07-17 03:04:48 [backends.py:1089] Using cache directory: /root/.cache/vllm/torch_compile_cache/84fc8fc0c8/rank_0_0/backbone for vLLM's torch.compile
+(EngineCore pid=293841) INFO 07-17 03:04:48 [backends.py:1148] Dynamo bytecode transform time: 4.13 s
+(EngineCore pid=293841) INFO 07-17 03:04:52 [backends.py:378] Cache the graph of compile range (1, 16384) for later use
+(EngineCore pid=293841) INFO 07-17 03:04:57 [backends.py:393] Compiling a graph for compile range (1, 16384) takes 8.65 s
+(EngineCore pid=293841) INFO 07-17 03:04:58 [decorators.py:708] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/ee9a1ff3e38c10cde05e99c5b4ddf36ffc843166545b2b16e6401fae0c97d579/rank_0_0/model
+(EngineCore pid=293841) INFO 07-17 03:04:58 [monitor.py:53] torch.compile took 14.27 s in total
+(EngineCore pid=293841) INFO 07-17 03:04:59 [monitor.py:81] Initial profiling/warmup run took 0.11 s
+(EngineCore pid=293841) INFO 07-17 03:04:59 [backends.py:1089] Using cache directory: /root/.cache/vllm/torch_compile_cache/84fc8fc0c8/rank_0_0/dflash_head for vLLM's torch.compile
+(EngineCore pid=293841) INFO 07-17 03:04:59 [backends.py:1148] Dynamo bytecode transform time: 0.76 s
+(EngineCore pid=293841) INFO 07-17 03:05:06 [backends.py:393] Compiling a graph for compile range (1, 16384) takes 6.76 s
+(EngineCore pid=293841) INFO 07-17 03:05:07 [decorators.py:708] saved AOT compiled function to /root/.cache/vllm/torch_compile_cache/torch_aot_compile/db3ed0bad1069695ecf771b2d5a4062be8b4302e9307fe21f6967602dfb35aef/rank_0_0/model
+(EngineCore pid=293841) INFO 07-17 03:05:07 [monitor.py:53] torch.compile took 7.92 s in total
+(EngineCore pid=293841) INFO 07-17 03:05:07 [monitor.py:81] Initial profiling/warmup run took 0.01 s
+(EngineCore pid=293841) INFO 07-17 03:05:09 [gpu_worker.py:538] Available KV cache memory: 60.57 GiB
+(EngineCore pid=293841) WARNING 07-17 03:05:09 [kv_cache_utils.py:1208] Add 1 padding layers, may waste at most 4.17% KV cache memory
+(EngineCore pid=293841) INFO 07-17 03:05:09 [kv_cache_utils.py:2146] GPU KV cache size: 4,231,120 tokens
+(EngineCore pid=293841) INFO 07-17 03:05:09 [kv_cache_utils.py:2147] Maximum concurrency for 4,096 tokens per request: 1032.99x
+(EngineCore pid=293841) INFO 07-17 03:05:09 [deep_gemm.py:175] deep_gemm not found in site-packages, trying vendored vllm.third_party.deep_gemm
+(EngineCore pid=293841) INFO 07-17 03:05:09 [deep_gemm.py:202] DeepGEMM PDL enabled on vllm.third_party.deep_gemm.
+(EngineCore pid=293841) INFO 07-17 03:05:09 [kernel_warmup.py:170] Using FlashInfer autotune cache file: /root/.cache/vllm/flashinfer_autotune_cache/0.6.13/90a/fba0403b1b4fd5b2dbd2c8c8895a23538525457a59fd55870ff75d1a44817dd6/autotune_configs.json
+(EngineCore pid=293841) 2026-07-17 03:05:09,151 - INFO - autotuner.py:651 - flashinfer.jit: [Autotuner]: Autotuning process starts ...
+(EngineCore pid=293841) 2026-07-17 03:05:09,517 - INFO - autotuner.py:674 - flashinfer.jit: [Autotuner]: Autotuning process ends
+(EngineCore pid=293841) WARNING 07-17 03:05:09 [kernel_warmup.py:199] No FlashInfer autotune cache entries found.Falling back to default tactics.
+(EngineCore pid=293841) INFO 07-17 03:05:09 [cutedsl_warmup.py:97] Skipping CuTeDSL warmup because no compile units were requested.
+(EngineCore pid=293841) Capturing CUDA graphs (PIECEWISE):   0%|          | 0/51 [00:00<?, ?it/s]Capturing CUDA graphs (PIECEWISE):   8%|▊         | 4/51 [00:00<00:01, 39.08it/s]Capturing CUDA graphs (PIECEWISE):  18%|█▊        | 9/51 [00:00<00:00, 43.91it/s]Capturing CUDA graphs (PIECEWISE):  27%|██▋       | 14/51 [00:00<00:00, 46.42it/s]Capturing CUDA graphs (PIECEWISE):  37%|███▋      | 19/51 [00:00<00:00, 47.53it/s]Capturing CUDA graphs (PIECEWISE):  49%|████▉     | 25/51 [00:00<00:00, 49.56it/s]Capturing CUDA graphs (PIECEWISE):  59%|█████▉    | 30/51 [00:00<00:00, 49.32it/s]Capturing CUDA graphs (PIECEWISE):  71%|███████   | 36/51 [00:00<00:00, 49.71it/s]Capturing CUDA graphs (PIECEWISE):  80%|████████  | 41/51 [00:00<00:00, 49.36it/s]Capturing CUDA graphs (PIECEWISE):  90%|█████████ | 46/51 [00:00<00:00, 48.66it/s]Capturing CUDA graphs (PIECEWISE): 100%|██████████| 51/51 [00:01<00:00, 48.68it/s]
+(EngineCore pid=293841) Capturing CUDA graphs (FULL):   0%|          | 0/49 [00:00<?, ?it/s]Capturing CUDA graphs (FULL):  14%|█▍        | 7/49 [00:00<00:00, 66.24it/s]Capturing CUDA graphs (FULL):  31%|███       | 15/49 [00:00<00:00, 69.81it/s]Capturing CUDA graphs (FULL):  47%|████▋     | 23/49 [00:00<00:00, 71.61it/s]Capturing CUDA graphs (FULL):  63%|██████▎   | 31/49 [00:00<00:00, 72.93it/s]Capturing CUDA graphs (FULL):  80%|███████▉  | 39/49 [00:00<00:00, 73.85it/s]Capturing CUDA graphs (FULL):  96%|█████████▌| 47/49 [00:00<00:00, 74.42it/s]Capturing CUDA graphs (FULL): 100%|██████████| 49/49 [00:00<00:00, 73.29it/s]
+(EngineCore pid=293841) INFO 07-17 03:05:11 [speculator.py:101] Capturing model for DFlash speculator...
+(EngineCore pid=293841) Capturing dflash CUDA graphs (FULL):   0%|          | 0/49 [00:00<?, ?it/s]Capturing dflash CUDA graphs (FULL):  22%|██▏       | 11/49 [00:00<00:00, 108.74it/s]Capturing dflash CUDA graphs (FULL):  49%|████▉     | 24/49 [00:00<00:00, 120.78it/s]Capturing dflash CUDA graphs (FULL):  78%|███████▊  | 38/49 [00:00<00:00, 127.62it/s]Capturing dflash CUDA graphs (FULL): 100%|██████████| 49/49 [00:00<00:00, 131.45it/s]
+(EngineCore pid=293841) INFO 07-17 03:05:12 [model_runner.py:729] Graph capturing finished in 3 secs, took 0.54 GiB
+(EngineCore pid=293841) INFO 07-17 03:05:23 [jit_monitor.py:73] Kernel JIT monitor activated; monitored JIT compilations during inference will use mode=warn.
+(EngineCore pid=293841) INFO 07-17 03:05:24 [core.py:337] init engine (profile, create kv cache, warmup model) took 39.93 s (compilation: 22.19 s)
+(EngineCore pid=293841) INFO 07-17 03:05:25 [kernel.py:292] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+(EngineCore pid=293841) WARNING 07-17 03:05:25 [jit_monitor.py:129] Triton kernel JIT compilation during inference: _prepare_dflash_inputs_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+(EngineCore pid=293841) WARNING 07-17 03:05:30 [jit_monitor.py:129] Triton kernel JIT compilation during inference: _topk_topp_kernel. This causes a latency spike; consider extending warmup to cover this shape/config.
+INFO 07-17 03:05:35 [loggers.py:273] Engine 000: Avg prompt throughput: 352.1 tokens/s, Avg generation throughput: 735.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 13.6%
+INFO 07-17 03:05:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.93, Accepted throughput: 484.04 tokens/s, Drafted throughput: 754.28 tokens/s, Accepted: 5044 tokens, Drafted: 7860 tokens, Per-position acceptance rate: 0.861, 0.617, 0.447, Avg Draft acceptance rate: 64.2%
+INFO 07-17 03:05:45 [loggers.py:273] Engine 000: Avg prompt throughput: 720.5 tokens/s, Avg generation throughput: 1238.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 13.6%
+INFO 07-17 03:05:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.95, Accepted throughput: 817.15 tokens/s, Drafted throughput: 1259.47 tokens/s, Accepted: 8171 tokens, Drafted: 12594 tokens, Per-position acceptance rate: 0.850, 0.629, 0.467, Avg Draft acceptance rate: 64.9%
+INFO 07-17 03:05:55 [loggers.py:273] Engine 000: Avg prompt throughput: 829.4 tokens/s, Avg generation throughput: 1213.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 11.8%
+INFO 07-17 03:05:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.90, Accepted throughput: 795.76 tokens/s, Drafted throughput: 1253.49 tokens/s, Accepted: 7957 tokens, Drafted: 12534 tokens, Per-position acceptance rate: 0.854, 0.617, 0.434, Avg Draft acceptance rate: 63.5%
+INFO 07-17 03:06:05 [loggers.py:273] Engine 000: Avg prompt throughput: 848.3 tokens/s, Avg generation throughput: 1177.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.82, Accepted throughput: 758.38 tokens/s, Drafted throughput: 1253.07 tokens/s, Accepted: 7584 tokens, Drafted: 12531 tokens, Per-position acceptance rate: 0.840, 0.580, 0.396, Avg Draft acceptance rate: 60.5%
+INFO 07-17 03:06:15 [loggers.py:273] Engine 000: Avg prompt throughput: 744.3 tokens/s, Avg generation throughput: 1234.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.94, Accepted throughput: 814.01 tokens/s, Drafted throughput: 1260.47 tokens/s, Accepted: 8141 tokens, Drafted: 12606 tokens, Per-position acceptance rate: 0.855, 0.624, 0.458, Avg Draft acceptance rate: 64.6%
+INFO 07-17 03:06:25 [loggers.py:273] Engine 000: Avg prompt throughput: 925.1 tokens/s, Avg generation throughput: 1163.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.79, Accepted throughput: 746.25 tokens/s, Drafted throughput: 1251.08 tokens/s, Accepted: 7462 tokens, Drafted: 12510 tokens, Per-position acceptance rate: 0.836, 0.570, 0.383, Avg Draft acceptance rate: 59.6%
+INFO 07-17 03:06:35 [loggers.py:273] Engine 000: Avg prompt throughput: 898.2 tokens/s, Avg generation throughput: 1166.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.79, Accepted throughput: 748.22 tokens/s, Drafted throughput: 1252.83 tokens/s, Accepted: 7482 tokens, Drafted: 12528 tokens, Per-position acceptance rate: 0.836, 0.571, 0.385, Avg Draft acceptance rate: 59.7%
+INFO 07-17 03:06:45 [loggers.py:273] Engine 000: Avg prompt throughput: 769.0 tokens/s, Avg generation throughput: 1192.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.84, Accepted throughput: 772.23 tokens/s, Drafted throughput: 1258.98 tokens/s, Accepted: 7723 tokens, Drafted: 12591 tokens, Per-position acceptance rate: 0.848, 0.583, 0.410, Avg Draft acceptance rate: 61.3%
+INFO 07-17 03:06:55 [loggers.py:273] Engine 000: Avg prompt throughput: 927.4 tokens/s, Avg generation throughput: 1157.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:06:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.77, Accepted throughput: 738.37 tokens/s, Drafted throughput: 1252.14 tokens/s, Accepted: 7384 tokens, Drafted: 12522 tokens, Per-position acceptance rate: 0.844, 0.563, 0.362, Avg Draft acceptance rate: 59.0%
+INFO 07-17 03:07:05 [loggers.py:273] Engine 000: Avg prompt throughput: 911.3 tokens/s, Avg generation throughput: 1141.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:07:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.73, Accepted throughput: 723.17 tokens/s, Drafted throughput: 1253.04 tokens/s, Accepted: 7232 tokens, Drafted: 12531 tokens, Per-position acceptance rate: 0.837, 0.543, 0.351, Avg Draft acceptance rate: 57.7%
+INFO 07-17 03:07:15 [loggers.py:273] Engine 000: Avg prompt throughput: 960.7 tokens/s, Avg generation throughput: 1152.6 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:07:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.76, Accepted throughput: 735.03 tokens/s, Drafted throughput: 1251.65 tokens/s, Accepted: 7350 tokens, Drafted: 12516 tokens, Per-position acceptance rate: 0.841, 0.556, 0.365, Avg Draft acceptance rate: 58.7%
+INFO 07-17 03:07:25 [loggers.py:273] Engine 000: Avg prompt throughput: 859.4 tokens/s, Avg generation throughput: 1141.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:07:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.72, Accepted throughput: 722.00 tokens/s, Drafted throughput: 1256.09 tokens/s, Accepted: 7220 tokens, Drafted: 12561 tokens, Per-position acceptance rate: 0.832, 0.541, 0.351, Avg Draft acceptance rate: 57.5%
+INFO 07-17 03:07:35 [loggers.py:273] Engine 000: Avg prompt throughput: 891.8 tokens/s, Avg generation throughput: 1150.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 9.3%
+INFO 07-17 03:07:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.75, Accepted throughput: 731.03 tokens/s, Drafted throughput: 1254.04 tokens/s, Accepted: 7310 tokens, Drafted: 12540 tokens, Per-position acceptance rate: 0.836, 0.560, 0.353, Avg Draft acceptance rate: 58.3%
+INFO 07-17 03:07:45 [loggers.py:273] Engine 000: Avg prompt throughput: 861.6 tokens/s, Avg generation throughput: 1170.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:07:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.80, Accepted throughput: 751.80 tokens/s, Drafted throughput: 1254.14 tokens/s, Accepted: 7519 tokens, Drafted: 12543 tokens, Per-position acceptance rate: 0.837, 0.576, 0.385, Avg Draft acceptance rate: 59.9%
+INFO 07-17 03:07:55 [loggers.py:273] Engine 000: Avg prompt throughput: 892.8 tokens/s, Avg generation throughput: 1166.6 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:07:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.79, Accepted throughput: 748.79 tokens/s, Drafted throughput: 1252.59 tokens/s, Accepted: 7491 tokens, Drafted: 12531 tokens, Per-position acceptance rate: 0.847, 0.574, 0.373, Avg Draft acceptance rate: 59.8%
+INFO 07-17 03:08:05 [loggers.py:273] Engine 000: Avg prompt throughput: 844.0 tokens/s, Avg generation throughput: 1204.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.88, Accepted throughput: 785.84 tokens/s, Drafted throughput: 1255.86 tokens/s, Accepted: 7858 tokens, Drafted: 12558 tokens, Per-position acceptance rate: 0.857, 0.603, 0.417, Avg Draft acceptance rate: 62.6%
+INFO 07-17 03:08:15 [loggers.py:273] Engine 000: Avg prompt throughput: 896.9 tokens/s, Avg generation throughput: 1190.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.85, Accepted throughput: 772.48 tokens/s, Drafted throughput: 1252.63 tokens/s, Accepted: 7724 tokens, Drafted: 12525 tokens, Per-position acceptance rate: 0.856, 0.596, 0.397, Avg Draft acceptance rate: 61.7%
+INFO 07-17 03:08:25 [loggers.py:273] Engine 000: Avg prompt throughput: 852.3 tokens/s, Avg generation throughput: 1177.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.81, Accepted throughput: 758.66 tokens/s, Drafted throughput: 1255.44 tokens/s, Accepted: 7587 tokens, Drafted: 12555 tokens, Per-position acceptance rate: 0.846, 0.582, 0.384, Avg Draft acceptance rate: 60.4%
+INFO 07-17 03:08:35 [loggers.py:273] Engine 000: Avg prompt throughput: 859.1 tokens/s, Avg generation throughput: 1193.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.85, Accepted throughput: 774.73 tokens/s, Drafted throughput: 1255.39 tokens/s, Accepted: 7748 tokens, Drafted: 12555 tokens, Per-position acceptance rate: 0.851, 0.585, 0.415, Avg Draft acceptance rate: 61.7%
+INFO 07-17 03:08:45 [loggers.py:273] Engine 000: Avg prompt throughput: 983.0 tokens/s, Avg generation throughput: 1118.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.69, Accepted throughput: 702.66 tokens/s, Drafted throughput: 1248.71 tokens/s, Accepted: 7026 tokens, Drafted: 12486 tokens, Per-position acceptance rate: 0.833, 0.531, 0.323, Avg Draft acceptance rate: 56.3%
+INFO 07-17 03:08:55 [loggers.py:273] Engine 000: Avg prompt throughput: 934.1 tokens/s, Avg generation throughput: 1147.8 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:08:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.75, Accepted throughput: 729.27 tokens/s, Drafted throughput: 1251.73 tokens/s, Accepted: 7292 tokens, Drafted: 12516 tokens, Per-position acceptance rate: 0.839, 0.554, 0.355, Avg Draft acceptance rate: 58.3%
+INFO 07-17 03:09:05 [loggers.py:273] Engine 000: Avg prompt throughput: 1022.3 tokens/s, Avg generation throughput: 1094.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.63, Accepted throughput: 677.39 tokens/s, Drafted throughput: 1248.29 tokens/s, Accepted: 6774 tokens, Drafted: 12483 tokens, Per-position acceptance rate: 0.814, 0.518, 0.296, Avg Draft acceptance rate: 54.3%
+INFO 07-17 03:09:15 [loggers.py:273] Engine 000: Avg prompt throughput: 824.8 tokens/s, Avg generation throughput: 1199.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.86, Accepted throughput: 779.39 tokens/s, Drafted throughput: 1256.68 tokens/s, Accepted: 7794 tokens, Drafted: 12567 tokens, Per-position acceptance rate: 0.850, 0.596, 0.415, Avg Draft acceptance rate: 62.0%
+INFO 07-17 03:09:25 [loggers.py:273] Engine 000: Avg prompt throughput: 877.5 tokens/s, Avg generation throughput: 1183.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.83, Accepted throughput: 765.40 tokens/s, Drafted throughput: 1254.31 tokens/s, Accepted: 7654 tokens, Drafted: 12543 tokens, Per-position acceptance rate: 0.843, 0.587, 0.400, Avg Draft acceptance rate: 61.0%
+INFO 07-17 03:09:35 [loggers.py:273] Engine 000: Avg prompt throughput: 804.2 tokens/s, Avg generation throughput: 1222.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.91, Accepted throughput: 801.36 tokens/s, Drafted throughput: 1256.50 tokens/s, Accepted: 8013 tokens, Drafted: 12564 tokens, Per-position acceptance rate: 0.858, 0.617, 0.439, Avg Draft acceptance rate: 63.8%
+INFO 07-17 03:09:45 [loggers.py:273] Engine 000: Avg prompt throughput: 872.5 tokens/s, Avg generation throughput: 1205.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.88, Accepted throughput: 787.41 tokens/s, Drafted throughput: 1254.01 tokens/s, Accepted: 7874 tokens, Drafted: 12540 tokens, Per-position acceptance rate: 0.856, 0.606, 0.422, Avg Draft acceptance rate: 62.8%
+INFO 07-17 03:09:55 [loggers.py:273] Engine 000: Avg prompt throughput: 861.1 tokens/s, Avg generation throughput: 1194.5 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:09:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.86, Accepted throughput: 775.87 tokens/s, Drafted throughput: 1254.42 tokens/s, Accepted: 7758 tokens, Drafted: 12543 tokens, Per-position acceptance rate: 0.853, 0.592, 0.410, Avg Draft acceptance rate: 61.9%
+INFO 07-17 03:10:05 [loggers.py:273] Engine 000: Avg prompt throughput: 937.0 tokens/s, Avg generation throughput: 1125.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.70, Accepted throughput: 708.43 tokens/s, Drafted throughput: 1251.95 tokens/s, Accepted: 7084 tokens, Drafted: 12519 tokens, Per-position acceptance rate: 0.830, 0.542, 0.326, Avg Draft acceptance rate: 56.6%
+INFO 07-17 03:10:15 [loggers.py:273] Engine 000: Avg prompt throughput: 758.1 tokens/s, Avg generation throughput: 1249.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.97, Accepted throughput: 828.62 tokens/s, Drafted throughput: 1259.13 tokens/s, Accepted: 8286 tokens, Drafted: 12591 tokens, Per-position acceptance rate: 0.864, 0.639, 0.471, Avg Draft acceptance rate: 65.8%
+INFO 07-17 03:10:25 [loggers.py:273] Engine 000: Avg prompt throughput: 938.7 tokens/s, Avg generation throughput: 1112.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.66, Accepted throughput: 694.79 tokens/s, Drafted throughput: 1252.49 tokens/s, Accepted: 6948 tokens, Drafted: 12525 tokens, Per-position acceptance rate: 0.827, 0.522, 0.316, Avg Draft acceptance rate: 55.5%
+INFO 07-17 03:10:35 [loggers.py:273] Engine 000: Avg prompt throughput: 814.2 tokens/s, Avg generation throughput: 1168.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.79, Accepted throughput: 748.35 tokens/s, Drafted throughput: 1257.22 tokens/s, Accepted: 7484 tokens, Drafted: 12573 tokens, Per-position acceptance rate: 0.846, 0.571, 0.368, Avg Draft acceptance rate: 59.5%
+INFO 07-17 03:10:45 [loggers.py:273] Engine 000: Avg prompt throughput: 856.2 tokens/s, Avg generation throughput: 1195.0 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.86, Accepted throughput: 777.10 tokens/s, Drafted throughput: 1254.31 tokens/s, Accepted: 7771 tokens, Drafted: 12543 tokens, Per-position acceptance rate: 0.840, 0.596, 0.422, Avg Draft acceptance rate: 62.0%
+INFO 07-17 03:10:55 [loggers.py:273] Engine 000: Avg prompt throughput: 796.3 tokens/s, Avg generation throughput: 1172.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:10:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.80, Accepted throughput: 753.66 tokens/s, Drafted throughput: 1257.69 tokens/s, Accepted: 7536 tokens, Drafted: 12576 tokens, Per-position acceptance rate: 0.836, 0.573, 0.388, Avg Draft acceptance rate: 59.9%
+INFO 07-17 03:11:05 [loggers.py:273] Engine 000: Avg prompt throughput: 963.9 tokens/s, Avg generation throughput: 1105.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:11:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.65, Accepted throughput: 689.25 tokens/s, Drafted throughput: 1250.79 tokens/s, Accepted: 6892 tokens, Drafted: 12507 tokens, Per-position acceptance rate: 0.826, 0.514, 0.313, Avg Draft acceptance rate: 55.1%
+INFO 07-17 03:11:15 [loggers.py:273] Engine 000: Avg prompt throughput: 806.9 tokens/s, Avg generation throughput: 1220.2 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:11:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.91, Accepted throughput: 800.35 tokens/s, Drafted throughput: 1257.37 tokens/s, Accepted: 8003 tokens, Drafted: 12573 tokens, Per-position acceptance rate: 0.856, 0.612, 0.441, Avg Draft acceptance rate: 63.7%
+INFO 07-17 03:11:25 [loggers.py:273] Engine 000: Avg prompt throughput: 924.0 tokens/s, Avg generation throughput: 1183.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:11:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.83, Accepted throughput: 764.53 tokens/s, Drafted throughput: 1251.66 tokens/s, Accepted: 7645 tokens, Drafted: 12516 tokens, Per-position acceptance rate: 0.842, 0.586, 0.405, Avg Draft acceptance rate: 61.1%
+INFO 07-17 03:11:35 [loggers.py:273] Engine 000: Avg prompt throughput: 947.9 tokens/s, Avg generation throughput: 1120.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 8.3%
+INFO 07-17 03:11:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.68, Accepted throughput: 702.53 tokens/s, Drafted throughput: 1251.18 tokens/s, Accepted: 7026 tokens, Drafted: 12513 tokens, Per-position acceptance rate: 0.829, 0.531, 0.325, Avg Draft acceptance rate: 56.1%
+bs=1: {"wall_s": 373.18, "output_tokens": 437953, "tok_per_s": 1173.6, "audio_seconds_generated": 17518.1, "audio_realtime_factor": 46.94, "finished_by_stop": 2020, "spec": {"acceptance_rate": 0.6022, "mean_acceptance_len": 2.806}}
+INFO 07-17 03:11:45 [loggers.py:273] Engine 000: Avg prompt throughput: 775.1 tokens/s, Avg generation throughput: 1922.3 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 63.3%
+INFO 07-17 03:11:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.80, Accepted throughput: 1235.25 tokens/s, Drafted throughput: 2057.92 tokens/s, Accepted: 12353 tokens, Drafted: 20580 tokens, Per-position acceptance rate: 0.838, 0.575, 0.388, Avg Draft acceptance rate: 60.0%
+INFO 07-17 03:11:55 [loggers.py:273] Engine 000: Avg prompt throughput: 398.8 tokens/s, Avg generation throughput: 4414.5 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 79.6%
+INFO 07-17 03:11:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.94, Accepted throughput: 2913.28 tokens/s, Drafted throughput: 4493.80 tokens/s, Accepted: 29136 tokens, Drafted: 44943 tokens, Per-position acceptance rate: 0.857, 0.625, 0.463, Avg Draft acceptance rate: 64.8%
+INFO 07-17 03:12:05 [loggers.py:273] Engine 000: Avg prompt throughput: 598.0 tokens/s, Avg generation throughput: 4851.8 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 81.6%
+INFO 07-17 03:12:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.80, Accepted throughput: 3117.25 tokens/s, Drafted throughput: 5193.82 tokens/s, Accepted: 31173 tokens, Drafted: 51939 tokens, Per-position acceptance rate: 0.846, 0.574, 0.381, Avg Draft acceptance rate: 60.0%
+INFO 07-17 03:12:15 [loggers.py:273] Engine 000: Avg prompt throughput: 670.3 tokens/s, Avg generation throughput: 5738.4 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 82.8%
+INFO 07-17 03:12:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.75, Accepted throughput: 3652.43 tokens/s, Drafted throughput: 6249.13 tokens/s, Accepted: 36527 tokens, Drafted: 62496 tokens, Per-position acceptance rate: 0.839, 0.559, 0.356, Avg Draft acceptance rate: 58.4%
+INFO 07-17 03:12:25 [loggers.py:273] Engine 000: Avg prompt throughput: 516.3 tokens/s, Avg generation throughput: 4858.9 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 83.2%
+INFO 07-17 03:12:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.88, Accepted throughput: 3172.64 tokens/s, Drafted throughput: 5052.96 tokens/s, Accepted: 31726 tokens, Drafted: 50529 tokens, Per-position acceptance rate: 0.853, 0.605, 0.426, Avg Draft acceptance rate: 62.8%
+INFO 07-17 03:12:35 [loggers.py:273] Engine 000: Avg prompt throughput: 674.2 tokens/s, Avg generation throughput: 5527.1 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 83.6%
+INFO 07-17 03:12:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.74, Accepted throughput: 3508.44 tokens/s, Drafted throughput: 6044.89 tokens/s, Accepted: 35085 tokens, Drafted: 60450 tokens, Per-position acceptance rate: 0.831, 0.555, 0.355, Avg Draft acceptance rate: 58.0%
+INFO 07-17 03:12:45 [loggers.py:273] Engine 000: Avg prompt throughput: 546.3 tokens/s, Avg generation throughput: 4931.3 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 83.8%
+INFO 07-17 03:12:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.87, Accepted throughput: 3213.57 tokens/s, Drafted throughput: 5146.73 tokens/s, Accepted: 32138 tokens, Drafted: 51471 tokens, Per-position acceptance rate: 0.853, 0.600, 0.420, Avg Draft acceptance rate: 62.4%
+INFO 07-17 03:12:55 [loggers.py:273] Engine 000: Avg prompt throughput: 576.0 tokens/s, Avg generation throughput: 5227.9 tokens/s, Running: 2 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 84.1%
+INFO 07-17 03:12:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.77, Accepted throughput: 3342.40 tokens/s, Drafted throughput: 5649.30 tokens/s, Accepted: 33424 tokens, Drafted: 56493 tokens, Per-position acceptance rate: 0.839, 0.567, 0.369, Avg Draft acceptance rate: 59.2%
+INFO 07-17 03:13:05 [loggers.py:273] Engine 000: Avg prompt throughput: 581.9 tokens/s, Avg generation throughput: 5124.3 tokens/s, Running: 8 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 84.9%
+INFO 07-17 03:13:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.78, Accepted throughput: 3281.36 tokens/s, Drafted throughput: 5520.31 tokens/s, Accepted: 32810 tokens, Drafted: 55197 tokens, Per-position acceptance rate: 0.840, 0.564, 0.379, Avg Draft acceptance rate: 59.4%
+bs=8: {"wall_s": 87.2, "output_tokens": 441093, "tok_per_s": 5058.2, "audio_seconds_generated": 17643.7, "audio_realtime_factor": 202.33, "finished_by_stop": 2019, "spec": {"acceptance_rate": 0.6048, "mean_acceptance_len": 2.814}}
+INFO 07-17 03:13:15 [loggers.py:273] Engine 000: Avg prompt throughput: 570.5 tokens/s, Avg generation throughput: 5718.3 tokens/s, Running: 9 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 85.0%
+INFO 07-17 03:13:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.90, Accepted throughput: 3742.39 tokens/s, Drafted throughput: 5913.58 tokens/s, Accepted: 37424 tokens, Drafted: 59136 tokens, Per-position acceptance rate: 0.851, 0.607, 0.440, Avg Draft acceptance rate: 63.3%
+INFO 07-17 03:13:25 [loggers.py:273] Engine 000: Avg prompt throughput: 828.2 tokens/s, Avg generation throughput: 7605.5 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 85.0%
+INFO 07-17 03:13:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.82, Accepted throughput: 4905.43 tokens/s, Drafted throughput: 8089.38 tokens/s, Accepted: 49055 tokens, Drafted: 80895 tokens, Per-position acceptance rate: 0.843, 0.578, 0.398, Avg Draft acceptance rate: 60.6%
+INFO 07-17 03:13:35 [loggers.py:273] Engine 000: Avg prompt throughput: 1028.5 tokens/s, Avg generation throughput: 8511.7 tokens/s, Running: 16 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.1%, Prefix cache hit rate: 84.9%
+INFO 07-17 03:13:35 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.78, Accepted throughput: 5448.03 tokens/s, Drafted throughput: 9171.27 tokens/s, Accepted: 54484 tokens, Drafted: 91719 tokens, Per-position acceptance rate: 0.840, 0.567, 0.376, Avg Draft acceptance rate: 59.4%
+INFO 07-17 03:13:45 [loggers.py:273] Engine 000: Avg prompt throughput: 1046.7 tokens/s, Avg generation throughput: 9130.1 tokens/s, Running: 3 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 84.8%
+INFO 07-17 03:13:45 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.76, Accepted throughput: 5826.98 tokens/s, Drafted throughput: 9904.82 tokens/s, Accepted: 58275 tokens, Drafted: 99057 tokens, Per-position acceptance rate: 0.837, 0.563, 0.364, Avg Draft acceptance rate: 58.8%
+INFO 07-17 03:13:55 [loggers.py:273] Engine 000: Avg prompt throughput: 848.9 tokens/s, Avg generation throughput: 7624.7 tokens/s, Running: 1 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 84.9%
+INFO 07-17 03:13:55 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.81, Accepted throughput: 4912.09 tokens/s, Drafted throughput: 8127.52 tokens/s, Accepted: 49125 tokens, Drafted: 81282 tokens, Per-position acceptance rate: 0.845, 0.580, 0.389, Avg Draft acceptance rate: 60.4%
+INFO 07-17 03:14:05 [loggers.py:273] Engine 000: Avg prompt throughput: 865.0 tokens/s, Avg generation throughput: 7481.5 tokens/s, Running: 4 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.0%, Prefix cache hit rate: 84.9%
+INFO 07-17 03:14:05 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.80, Accepted throughput: 4803.89 tokens/s, Drafted throughput: 8013.32 tokens/s, Accepted: 48037 tokens, Drafted: 80130 tokens, Per-position acceptance rate: 0.842, 0.576, 0.381, Avg Draft acceptance rate: 59.9%
+bs=16: {"wall_s": 55.31, "output_tokens": 437619, "tok_per_s": 7911.7, "audio_seconds_generated": 17504.8, "audio_realtime_factor": 316.47, "finished_by_stop": 2018, "spec": {"acceptance_rate": 0.6022, "mean_acceptance_len": 2.807}}
+INFO 07-17 03:14:15 [loggers.py:273] Engine 000: Avg prompt throughput: 2048.9 tokens/s, Avg generation throughput: 17677.3 tokens/s, Running: 64 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.3%, Prefix cache hit rate: 84.7%
+INFO 07-17 03:14:15 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.84, Accepted throughput: 11435.31 tokens/s, Drafted throughput: 18687.07 tokens/s, Accepted: 114360 tokens, Drafted: 186882 tokens, Per-position acceptance rate: 0.847, 0.585, 0.404, Avg Draft acceptance rate: 61.2%
+INFO 07-17 03:14:25 [loggers.py:273] Engine 000: Avg prompt throughput: 2162.9 tokens/s, Avg generation throughput: 20271.9 tokens/s, Running: 59 reqs, Waiting: 0 reqs, GPU KV cache usage: 0.4%, Prefix cache hit rate: 84.8%
+INFO 07-17 03:14:25 [metrics.py:120] SpecDecoding metrics: Mean acceptance length: 2.81, Accepted throughput: 13048.76 tokens/s, Drafted throughput: 21648.40 tokens/s, Accepted: 130478 tokens, Drafted: 216468 tokens, Per-position acceptance rate: 0.843, 0.577, 0.388, Avg Draft acceptance rate: 60.3%
+(EngineCore pid=293841) INFO 07-17 03:14:29 [core.py:1214] [shutdown] EngineCore: trigger received signal=SIGTERM
+(EngineCore pid=293841) INFO 07-17 03:14:29 [core.py:1333] [shutdown] EngineCore: start mode=abort timeout=0s
+(EngineCore pid=293841) INFO 07-17 03:14:29 [core.py:1364] [shutdown] EngineCore: request processing complete; starting resource teardown
+(EngineCore pid=293841) INFO 07-17 03:14:29 [core.py:1227] [shutdown] EngineCore: exiting busy loop
+bs=64: {"wall_s": 22.88, "output_tokens": 443084, "tok_per_s": 19363.0, "audio_seconds_generated": 17723.4, "audio_realtime_factor": 774.52, "finished_by_stop": 2020, "spec": {"acceptance_rate": 0.6036, "mean_acceptance_len": 2.811}}
+{
+  "target_model": "yuekai/cosyvoice2_llm",
+  "draft_model": "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/ckpt_dflash_500k_regen/checkpoint_best",
+  "method": "dflash",
+  "num_spec_tokens": 3,
+  "dataset": "yuekai/seed_tts_cosy2",
+  "split": "test_zh",
+  "num_prompts": 2020,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "top_k": 50,
+  "repetition_penalty": 1.0,
+  "runs": {
+    "bs1": {
+      "wall_s": 373.18,
+      "output_tokens": 437953,
+      "tok_per_s": 1173.6,
+      "audio_seconds_generated": 17518.1,
+      "audio_realtime_factor": 46.94,
+      "finished_by_stop": 2020,
+      "spec": {
+        "acceptance_rate": 0.6022,
+        "mean_acceptance_len": 2.806
+      }
+    },
+    "bs8": {
+      "wall_s": 87.2,
+      "output_tokens": 441093,
+      "tok_per_s": 5058.2,
+      "audio_seconds_generated": 17643.7,
+      "audio_realtime_factor": 202.33,
+      "finished_by_stop": 2019,
+      "spec": {
+        "acceptance_rate": 0.6048,
+        "mean_acceptance_len": 2.814
+      }
+    },
+    "bs16": {
+      "wall_s": 55.31,
+      "output_tokens": 437619,
+      "tok_per_s": 7911.7,
+      "audio_seconds_generated": 17504.8,
+      "audio_realtime_factor": 316.47,
+      "finished_by_stop": 2018,
+      "spec": {
+        "acceptance_rate": 0.6022,
+        "mean_acceptance_len": 2.807
+      }
+    },
+    "bs64": {
+      "wall_s": 22.88,
+      "output_tokens": 443084,
+      "tok_per_s": 19363.0,
+      "audio_seconds_generated": 17723.4,
+      "audio_realtime_factor": 774.52,
+      "finished_by_stop": 2020,
+      "spec": {
+        "acceptance_rate": 0.6036,
+        "mean_acceptance_len": 2.811
+      }
+    }
+  }
+}
+results written to /lustre/fsw/portfolios/coreai/users/yuekaiz/speculative/SpeechSpec/results/cv2_dflash.json

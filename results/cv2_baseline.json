@@ -1,0 +1,47 @@
+{
+  "target_model": "yuekai/cosyvoice2_llm",
+  "draft_model": null,
+  "method": null,
+  "num_spec_tokens": 0,
+  "dataset": "yuekai/seed_tts_cosy2",
+  "split": "test_zh",
+  "num_prompts": 2020,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "top_k": 50,
+  "repetition_penalty": 1.0,
+  "runs": {
+    "bs1": {
+      "wall_s": 674.32,
+      "output_tokens": 454707,
+      "tok_per_s": 674.3,
+      "audio_seconds_generated": 18188.3,
+      "audio_realtime_factor": 26.97,
+      "finished_by_stop": 2019
+    },
+    "bs8": {
+      "wall_s": 175.63,
+      "output_tokens": 436975,
+      "tok_per_s": 2488.1,
+      "audio_seconds_generated": 17479.0,
+      "audio_realtime_factor": 99.52,
+      "finished_by_stop": 2020
+    },
+    "bs16": {
+      "wall_s": 125.09,
+      "output_tokens": 447263,
+      "tok_per_s": 3575.5,
+      "audio_seconds_generated": 17890.5,
+      "audio_realtime_factor": 143.02,
+      "finished_by_stop": 2016
+    },
+    "bs64": {
+      "wall_s": 49.63,
+      "output_tokens": 445667,
+      "tok_per_s": 8979.9,
+      "audio_seconds_generated": 17826.7,
+      "audio_realtime_factor": 359.19,
+      "finished_by_stop": 2020
+    }
+  }
+}

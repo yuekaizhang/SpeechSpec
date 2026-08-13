@@ -1,0 +1,63 @@
+{
+  "target_model": "yuekai/cosyvoice2_llm",
+  "draft_model": "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/ckpt_dspark_50k_regen/checkpoint_best",
+  "method": "dspark",
+  "num_spec_tokens": 7,
+  "dataset": "yuekai/seed_tts_cosy2",
+  "split": "test_zh",
+  "num_prompts": 2020,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "top_k": 50,
+  "repetition_penalty": 1.0,
+  "runs": {
+    "bs1": {
+      "wall_s": 314.54,
+      "output_tokens": 442108,
+      "tok_per_s": 1405.6,
+      "audio_seconds_generated": 17684.3,
+      "audio_realtime_factor": 56.22,
+      "finished_by_stop": 2020,
+      "spec": {
+        "acceptance_rate": 0.3231,
+        "mean_acceptance_len": 3.262
+      }
+    },
+    "bs8": {
+      "wall_s": 68.99,
+      "output_tokens": 450894,
+      "tok_per_s": 6535.6,
+      "audio_seconds_generated": 18035.8,
+      "audio_realtime_factor": 261.42,
+      "finished_by_stop": 2018,
+      "spec": {
+        "acceptance_rate": 0.3268,
+        "mean_acceptance_len": 3.288
+      }
+    },
+    "bs16": {
+      "wall_s": 42.99,
+      "output_tokens": 440841,
+      "tok_per_s": 10255.3,
+      "audio_seconds_generated": 17633.6,
+      "audio_realtime_factor": 410.21,
+      "finished_by_stop": 2019,
+      "spec": {
+        "acceptance_rate": 0.3196,
+        "mean_acceptance_len": 3.237
+      }
+    },
+    "bs64": {
+      "wall_s": 20.7,
+      "output_tokens": 444305,
+      "tok_per_s": 21465.3,
+      "audio_seconds_generated": 17772.2,
+      "audio_realtime_factor": 858.61,
+      "finished_by_stop": 2019,
+      "spec": {
+        "acceptance_rate": 0.3204,
+        "mean_acceptance_len": 3.243
+      }
+    }
+  }
+}

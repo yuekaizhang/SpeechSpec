@@ -1,0 +1,63 @@
+{
+  "target_model": "yuekai/Fun-CosyVoice3-0.5B-2512-LLM-HF",
+  "draft_model": "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/ckpt_dspark_cv3_500k_regen_v2/checkpoint_best",
+  "method": "dspark",
+  "num_spec_tokens": 7,
+  "dataset": "/lustre/fs1/portfolios/coreai/projects/coreai_dlalgo_nemorl/users/yuekaiz/speculative/outputs/cosyvoice2_eagle3/seed_tts_zh_cosy3_local",
+  "split": "test_zh",
+  "num_prompts": 2020,
+  "temperature": 0.8,
+  "top_p": 0.95,
+  "top_k": 15,
+  "repetition_penalty": 1.1,
+  "runs": {
+    "bs1": {
+      "wall_s": 272.66,
+      "output_tokens": 342905,
+      "tok_per_s": 1257.6,
+      "audio_seconds_generated": 13716.2,
+      "audio_realtime_factor": 50.31,
+      "finished_by_stop": 2019,
+      "spec": {
+        "acceptance_rate": 0.2836,
+        "mean_acceptance_len": 2.985
+      }
+    },
+    "bs8": {
+      "wall_s": 53.99,
+      "output_tokens": 343252,
+      "tok_per_s": 6357.2,
+      "audio_seconds_generated": 13730.1,
+      "audio_realtime_factor": 254.29,
+      "finished_by_stop": 2020,
+      "spec": {
+        "acceptance_rate": 0.2834,
+        "mean_acceptance_len": 2.984
+      }
+    },
+    "bs16": {
+      "wall_s": 34.18,
+      "output_tokens": 347067,
+      "tok_per_s": 10152.7,
+      "audio_seconds_generated": 13882.7,
+      "audio_realtime_factor": 406.11,
+      "finished_by_stop": 2018,
+      "spec": {
+        "acceptance_rate": 0.2847,
+        "mean_acceptance_len": 2.993
+      }
+    },
+    "bs64": {
+      "wall_s": 15.17,
+      "output_tokens": 341641,
+      "tok_per_s": 22521.9,
+      "audio_seconds_generated": 13665.6,
+      "audio_realtime_factor": 900.87,
+      "finished_by_stop": 2020,
+      "spec": {
+        "acceptance_rate": 0.2791,
+        "mean_acceptance_len": 2.954
+      }
+    }
+  }
+}
