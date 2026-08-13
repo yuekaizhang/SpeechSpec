@@ -1,0 +1,12 @@
+=== Speech LLM ASR Benchmark ===
+Target:       yuekai/qwen2_audio_aishell_sft
+Draft:        None (baseline)
+Spec algo:    none
+Dataset:      aishell (7176 utts)   Concurrency: 1
+
+CER:          1.95%
+Errors:       0
+Wall time:    1684.0s
+Total audio:  36108.9s (overall RTF 0.0466)
+Mean latency: 0.235s
+Throughput:   4.3 utt/s

@@ -1,0 +1,14 @@
+=== Speech LLM ASR Benchmark ===
+Target:       Qwen/Qwen3-Omni-30B-A3B-Instruct
+Draft:        yuekai/qwen3_omni_30b_a3b_instruct_dflash_block8
+Spec algo:    DFLASH
+Dataset:      librispeech (2620 utts)   Concurrency: 1
+
+WER:          1.70%
+Errors:       0
+Wall time:    1064.2s
+Total audio:  19452.5s (overall RTF 0.0547)
+Mean latency: 0.406s
+Throughput:   2.5 utt/s
+Accept (micro): 4.768
+Accept (macro): 5.046
