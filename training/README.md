@@ -66,7 +66,8 @@ Gotchas worth knowing (each cost a debugging session):
 
 ## 2. TTS drafters (DSpark / DFlash for CosyVoice2/3) — speculators
 
-Trained with [vllm-project/speculators](https://github.com/vllm-project/speculators)
+Trained with the speculators fork:
+**<https://github.com/yuekaizhang/speculators/tree/tts>**
 (`scripts/train.py`; needs `>= 69150da` for qwen2-style verifiers that omit
 `head_dim`). Scripts in [tts/](tts/):
 
